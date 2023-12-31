@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snapchat-login</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <img src="./Vector.png" alt="" />
+    </nav>
+    <h1 class="welcome">Welcome Back!</h1>
+    <div class="login">
+      <button class="google-login">Log In via Google</button>
+      <p style="font-weight: bolder">Trouble Logging In?</p>
+      <h1 class="orr">OR</h1>
+    </div>
+
+    <div class="form">
+      <form action="" class="formm">
+        <div class="input-container">
+          <input type="text" id="username"/>
+          <label for="username">USERNAME OR EMAIL</label>
+        </div>
+        <div class="input-container" id="password-div">
+          <input type="password" id="password" />
+          <label for="password">PASSWORD</label>
+        </div>
+        <a
+          href=""
+          style="
+            margin-right: -13rem;
+            color: blue;
+            text-decoration: none;
+            margin-top: 0.5rem;
+          "
+          >Forget password?</a
+        >
+        <button class="btn-login">Log In</button>
+        <p>
+          <a
+            style="font-weight: bold; text-decoration: none; margin-top: 0.5rem"
+            >Signup</a
+          >
+          if you don't have an account
+        </p>
+      </form>
+    </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const inputContainers = document.querySelectorAll(".input-container input");
+
+    inputContainers.forEach((input) => {
+      const label = input.nextElementSibling;
+
+      input.addEventListener("focus", function () {
+        label.classList.add("active");
+      });
+
+      input.addEventListener("input", function () {
+        if (input.value === "") {
+          label.classList.remove("active");
+        } else {
+          label.classList.add("active");
+        }
+      });
+
+      // Check if input has value on page load
+      if (input.value !== "") {
+        label.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+
+  </body>
+</html>
